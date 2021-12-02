@@ -2006,6 +2006,10 @@ const res1 = inputs.reduce((acc, cur, curIdx) => {
 }, 0)
 
 const threeMesurements = inputs.slice(0, -2).map((val, idx) => {
+  if(typeof val !== 'number') {
+    return;
+  }
+
   return val + inputs[idx+1] + inputs[idx+2];
 });
 
